@@ -12,7 +12,9 @@ namespace Rechnerverwaltung
     {
         public static void Menu_Ganz()
         {
-            Console.WriteLine("Was möchten Sie machen?\nRechner (f)inden. Rechner (e)rstellen. Rechner (l)öschen?");
+            ITVerwaltung.Fill_List();
+
+            Console.WriteLine("Was möchten Sie machen?\nRechner (f)inden. Rechner (e)rstellen. Rechner (l)öschen, Liste (s)peichern?");
             string wahl = UserEingabe().ToLower();
             switch (wahl)
             {
@@ -27,6 +29,10 @@ namespace Rechnerverwaltung
                 case "l":
                 case "löschen":
                     Menu_Loeschung();
+                    break;
+                case "s":
+                case "speichern":
+                    ITVerwaltung.Speichern();
                     break;
                 default:
                     Console.WriteLine("Wie bitte?");
