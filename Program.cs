@@ -7,12 +7,11 @@ namespace Rechnerverwaltung
     {
         static void Main(string[] args)
         {
-
+            ITVerwaltung.Fill_List();
             while (true)
             {
                 Menu.Menu_Ganz();
             }
         }
-
     }
 }

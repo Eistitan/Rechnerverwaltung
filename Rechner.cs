@@ -20,7 +20,7 @@ namespace Rechnerverwaltung
         public override string ToString()
         {
             string rechner = $"Rechner {Name} mit der IP: {IP}";
-            return rechner ;
+            return rechner;
         }
     }
 }

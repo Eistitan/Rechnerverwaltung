@@ -18,7 +18,6 @@ namespace Rechnerverwaltung
             rechner_liste.Add(new Terminal("Raum 245, Position 22", (rechner_liste[1] as Server), "Terminal_342", "123.132.12.4"));
             rechner_liste.Add(new B_Workplace(2.8, 16, 500, "Büro_WP_32", "85.21.132.11"));
             rechner_liste.Add(new G_Workplace(32, "RTX 5090 Plus Ultra", 2.3, 16, 1000, "Gr_WP_43", "132.12.125.1"));
-            
         }
         public static void Speichern()
         {
@@ -28,6 +27,8 @@ namespace Rechnerverwaltung
                 sw1.WriteLine(rechner_liste[i].ToString());
                 sw1.WriteLine("");
             }
+            sw1.Flush();
+            sw1.Close();
             sw1.Dispose();
         }
 
@@ -51,21 +52,25 @@ namespace Rechnerverwaltung
         }
 
         //Überladene Methode zum Befüllen der Liste
-        public static void Erstellung(string standort,int referenz, string name, string ip)
+        public static void Rechner_erstellung(Rechner r)
+        {
+            rechner_liste.Add(r);
+        }
+        public static void Erstellung(string standort, int referenz, string name, string ip)
         {
             rechner_liste.Add(new Terminal(standort, (rechner_liste[referenz] as Server), name, ip));
         }
-        public static void Erstellung(string serverfunktion, double cpu_leistung, int cpu_anzahl, int ram, int festpl_anzahl, int festpl_groesse,  int netzleistung, string name, string ip)
+        public static void Erstellung(string serverfunktion, double cpu_leistung, int cpu_anzahl, int ram, int festpl_anzahl, int festpl_groesse, int netzleistung, string name, string ip)
         {
-            rechner_liste.Add(new Server(cpu_anzahl, cpu_leistung, ram, festpl_anzahl, festpl_groesse, serverfunktion, netzleistung, name,ip));
+            rechner_liste.Add(new Server(cpu_anzahl, cpu_leistung, ram, festpl_anzahl, festpl_groesse, serverfunktion, netzleistung, name, ip));
         }
         public static void Erstellung(double cpu_leistung, int ram, int festpl_groesse, string name, string ip)
         {
-            rechner_liste.Add(new B_Workplace(cpu_leistung,ram,festpl_groesse,name,ip));
+            rechner_liste.Add(new B_Workplace(cpu_leistung, ram, festpl_groesse, name, ip));
         }
         public static void Erstellung(double monitor_groesse, string gpu, double cpu_leistung, int ram, int festpl_groesse, string name, string ip)
         {
-            rechner_liste.Add(new G_Workplace(monitor_groesse,gpu,cpu_leistung,ram,festpl_groesse,name,ip));
+            rechner_liste.Add(new G_Workplace(monitor_groesse, gpu, cpu_leistung, ram, festpl_groesse, name, ip));
         }
 
         //Methode zum Löschen eines Objekts aus der Liste mittels des Indexes
@@ -73,6 +78,5 @@ namespace Rechnerverwaltung
         {
             rechner_liste.RemoveAt(index);
         }
-
     }
 }

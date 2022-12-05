@@ -19,7 +19,7 @@ namespace Rechnerverwaltung
         public override string ToString()
         {
             string g_workplace = $"\n{Monitorgroesse} Zoll Monitor und {GPU_Name} Grafikkarte";
-            return base.ToString()+g_workplace;
+            return base.ToString() + g_workplace;
         }
     }
 }

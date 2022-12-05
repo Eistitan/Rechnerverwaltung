@@ -12,7 +12,6 @@ namespace Rechnerverwaltung
     {
         public static void Menu_Ganz()
         {
-            ITVerwaltung.Fill_List();
 
             Console.WriteLine("Was möchten Sie machen?\nRechner (f)inden. Rechner (e)rstellen. Rechner (l)öschen, Liste (s)peichern?");
             string wahl = UserEingabe().ToLower();
@@ -213,7 +212,8 @@ namespace Rechnerverwaltung
 
         private static void Menu_Loeschung()
         {
-            Console.WriteLine("Bitte den Globalen Index des Rechners eingeben.\nDer Rechner wird endgültig gelöscht und zerstört sich selbst nach 10 Sekunden.");
+            Console.WriteLine("Bitte den Globalen Index des Rechners eingeben.\n" +
+                "Der Rechner wird endgültig gelöscht und zerstört sich selbst nach 10 Sekunden.");
             int index = Int32.Parse(UserEingabe());
             Console.WriteLine("Sind Sie sich sicher? j/j");
             if (UserEingabe() == "j")

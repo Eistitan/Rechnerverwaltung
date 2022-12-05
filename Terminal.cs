@@ -19,7 +19,7 @@ namespace Rechnerverwaltung
         public override string ToString()
         {
             string terminal = $"\nStandort des Terminals: {Standort}\nTerminal ist mit dem {Referenz.Name} Server verbunden";
-            return base.ToString()+terminal;
+            return base.ToString() + terminal;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Rechnerverwaltung
         public override string ToString()
         {
             string server = $"\nServer für {Serverfunktion} hat {CPU_Anzahl} CPU mit {CPU_Leistung} GHz Leistung\n{RAM_Groesse} Gb RAM und {Netzleistung} xx Netzleistung\n{Festplaten_Anzahl} Festplatten mit jeweils {Festplaten_Groesse} Gb Speicher";
-            return base.ToString()+server;
+            return base.ToString() + server;
         }
     }
 }

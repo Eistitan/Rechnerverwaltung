@@ -21,7 +21,7 @@ namespace Rechnerverwaltung
         public override string ToString()
         {
             string b_workplace = $"\nWorkplace hat {CPU_Leistung} GHz Rechenleistung und {RAM_Groesse} Gb Arbeitsspeicher\nMit {Festplaten_Groesse} Gb Festplattenspeicher";
-            return base.ToString()+b_workplace;
+            return base.ToString() + b_workplace;
         }
     }
 }
